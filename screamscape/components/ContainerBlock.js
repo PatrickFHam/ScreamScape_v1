@@ -1,11 +1,14 @@
 import React from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import { useTheme } from "@nextui-org/react";
 import Navigation from "./Navigation";
 import Footer from "./Footer";
+import style from "../styles/ContainerBlock.module.css";
 
 export default function ContainerBlock({ children, ...customMeta }) {
   const router = useRouter();
+  const { isDark } = useTheme();
 
   const meta = {
     title: "Screamscape // Amusement News",
@@ -54,7 +57,7 @@ export default function ContainerBlock({ children, ...customMeta }) {
         <main>
             <div>{children}</div>
         </main>
-        <footer>
+        <footer className={isDark ? `${style.footer} ${style.footerDarkMode}` : `${style.footer} ${style.footerLightMode}`}>
           <Footer />
         </footer>
       </>
