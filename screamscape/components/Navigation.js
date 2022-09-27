@@ -1,21 +1,18 @@
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { Navbar, Dropdown, Button, Text, useTheme } from "@nextui-org/react";
+
+import { Navbar, Dropdown, Text } from "@nextui-org/react";
 
 import dynamic from "next/dynamic";
-const ThemeButton = dynamic(() => import("../components/ThemeButton"), { ssr: false });
+const ThemeButton = dynamic(() => import("./ThemeButton"), { ssr: false });
 
 import { NavLayout } from "./NavLayout.js";
 import { AcmeLogo } from "./AcmeLogo.js";
 import { icons } from "./Icons.js";
 
 
-export default function App() {
-
-  const { isDark } = useTheme();
-  const router = useRouter();
+export default function Navigation() {
 
   return (
+    <nav>
     <NavLayout>
       <Navbar>
         <Navbar.Brand>
@@ -127,5 +124,6 @@ export default function App() {
         </Navbar.Content>
       </Navbar>
     </NavLayout>
+    </nav>
   );
 }

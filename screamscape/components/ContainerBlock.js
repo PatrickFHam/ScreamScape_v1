@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import Navbar from "./Navbar";
+import Navigation from "./Navigation";
 import Footer from "./Footer";
 
 export default function ContainerBlock({ children, ...customMeta }) {
@@ -47,15 +47,17 @@ export default function ContainerBlock({ children, ...customMeta }) {
           <meta property="article:published_time" content={meta.date} />
         )}
       </Head>
-      <body>
-        <header>
-          <Navbar />
-        </header>
+      <>
+        <nav>
+          <Navigation />
+        </nav>
         <main>
             <div>{children}</div>
         </main>
-        <Footer />
-      </body>
+        <footer>
+          <Footer />
+        </footer>
+      </>
     </div>
   );
 }

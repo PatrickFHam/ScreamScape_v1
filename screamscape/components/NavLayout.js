@@ -1,4 +1,3 @@
-// import { Content } from "./Content.js"
 import { NavBox } from "./NavBox.js";
 
 export const NavLayout = ({ children }) => (
