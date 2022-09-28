@@ -8,7 +8,6 @@ import { NavLayout } from "./NavLayout.js";
 import { AcmeLogo } from "./AcmeLogo.js";
 import { icons } from "./Icons.js";
 
-
 export default function Navigation() {
 
   return (
@@ -67,50 +66,38 @@ export default function Navigation() {
               }}
             >
               <Dropdown.Item
-                key="autoscaling"
-                showFullDescription
-                description="ACME scales apps to meet user demand, automagically, based on load."
-                icon={icons.scale}
+                key="six_flags_parks"
+                icon={icons.yellow}
               >
                 Six Flags Parks
               </Dropdown.Item>
               <Dropdown.Item
-                key="usage_metrics"
-                showFullDescription
-                description="Real-time metrics to debug issues. Slow query added? We’ll show you exactly where."
-                icon={icons.activity}
+                key="cedar_fair_parks"
+                icon={icons.blue}
               >
                 Cedar Fair Parks
               </Dropdown.Item>
               <Dropdown.Item
-                key="production_ready"
-                showFullDescription
-                description="ACME runs on ACME, join us and others serving requests at web scale."
-                icon={icons.flash}
+                key="disney_parks"
+                icon={icons.purple}
               >
                 Disney Parks
               </Dropdown.Item>
               <Dropdown.Item
-                key="99_uptime"
-                showFullDescription
-                description="Applications stay on the grid with high availability and high uptime guarantees."
-                icon={icons.server}
+                key="universal_parks"
+                icon={icons.red}
               >
                 Universal Parks
               </Dropdown.Item>
               <Dropdown.Item
-                key="supreme_support"
-                showFullDescription
-                description="Overcome any challenge with a supporting team ready to respond."
-                icon={icons.user}
+                key="busch_parks"
+                icon={icons.green}
               >
                 Busch Parks
               </Dropdown.Item>
               <Dropdown.Item
-                key="supreme_support"
-                showFullDescription
-                description="Overcome any challenge with a supporting team ready to respond."
-                icon={icons.user}
+                key="other_parks"
+                icon={icons.grey}
               >
                 Others
               </Dropdown.Item>
