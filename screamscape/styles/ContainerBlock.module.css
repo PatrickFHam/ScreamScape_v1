@@ -1,3 +1,20 @@
+.fullwidthlight {
+    width: 100vw;
+    background-color:white;
+}
+.fullwidthdark {
+    width: 100vw;
+    background-color:black;
+}
+
+.lightBackground {
+    background-color: white;
+}
+
+.darkBackground {
+    background-color: black;
+}
+
 .footer {
     display: flex;
     flex-direction: row;
@@ -11,8 +28,8 @@
 }
 
 .footerLightMode {
-    background-color: rgb(49, 198, 183);
+    background-image: linear-gradient(white, rgb(49,198,183))
 }
 .footerDarkMode {
-    background-color: blueviolet;
+    background-image: linear-gradient(black, blueviolet);
 }

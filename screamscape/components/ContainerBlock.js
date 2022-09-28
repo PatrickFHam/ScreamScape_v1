@@ -51,11 +51,11 @@ export default function ContainerBlock({ children, ...customMeta }) {
         )}
       </Head>
       <>
-        <nav>
+        <nav className={ isDark ? `${style.fullwidthdark}` : `${style.fullwidthlight}` }>
           <Navigation />
         </nav>
         <main>
-            <div>{children}</div>
+            <div className={isDark ? `${style.darkBackground}` : `${style.lightBackground}` }>{children}</div>
         </main>
         <footer className={isDark ? `${style.footer} ${style.footerDarkMode}` : `${style.footer} ${style.footerLightMode}`}>
           <Footer />

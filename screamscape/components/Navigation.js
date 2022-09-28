@@ -1,5 +1,5 @@
 
-import { Navbar, Dropdown, Text } from "@nextui-org/react";
+import { Navbar, Dropdown, Text, useTheme } from "@nextui-org/react";
 
 import dynamic from "next/dynamic";
 const ThemeButton = dynamic(() => import("./ThemeButton"), { ssr: false });
@@ -8,10 +8,13 @@ import { NavLayout } from "./NavLayout.js";
 import { AcmeLogo } from "./AcmeLogo.js";
 import { icons } from "./Icons.js";
 
+import style from "../styles/Navigation.module.css";
+
 export default function Navigation() {
 
+  const { isDark } = useTheme();
+
   return (
-    <nav>
     <NavLayout>
       <Navbar>
         <Navbar.Brand>
@@ -22,7 +25,7 @@ export default function Navigation() {
         </Navbar.Brand>
         <Navbar.Content
           enableCursorHighlight
-          activeColor="secondary"
+          activeColor={ isDark ? "secondary" : "primary" }
           hideIn="xs"
           variant="underline"
         >
@@ -49,7 +52,7 @@ export default function Navigation() {
               aria-label="ACME features"
               css={{
                 $$dropdownMenuWidth: "340px",
-                $$dropdownItemHeight: "70px",
+                $$dropdownItemHeight: "45px",
                 "& .nextui-dropdown-item": {
                   py: "$4",
                   // dropdown item left icon
@@ -111,6 +114,5 @@ export default function Navigation() {
         </Navbar.Content>
       </Navbar>
     </NavLayout>
-    </nav>
   );
 }
