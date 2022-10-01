@@ -1,7 +1,7 @@
 // import Image from 'next/image';
-import { Card, Col, Row, Button, Text, Container, useTheme } from "@nextui-org/react";
-
+import { Card, Col, Row, Button, Link, Text, Container, useTheme } from "@nextui-org/react";
 import styles from '../styles/Hero.module.css';
+
 
 export default function Hero() {
 
@@ -10,16 +10,6 @@ export default function Hero() {
     return (
         <Container>
             <Card css={{ w: "100%", h: "400px" }}>
-                <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
-                    <Col>
-                    <Text size={12} weight="bold" transform="uppercase" color="#ffffffAA">
-                        New
-                    </Text>
-                    <Text h3 color="black">
-                        Acme camera
-                    </Text>
-                    </Col>
-                </Card.Header>
                 <Card.Body css={{ p: 0 }}>
                     <Card.Image
                     src={ isDark ? "/assets/images/hangtime-darkmode.jpg" : "/assets/images/hangtime-lightmode.jpg"}
@@ -42,24 +32,26 @@ export default function Hero() {
                     <Row>
                     <Col>
                         <Text color="#000" size={12}>
-                        Available soon.
+                        Amusement News and Rumors
                         </Text>
                         <Text color="#000" size={12}>
-                        Get notified.
+                        Latest Update: _________.
                         </Text>
                     </Col>
                     <Col>
                         <Row justify="flex-end">
-                        <Button flat auto rounded color="secondary">
-                            <Text
-                            css={{ color: "inherit" }}
-                            size={12}
-                            weight="bold"
-                            transform="uppercase"
-                            >
-                            Notify Me
-                            </Text>
-                        </Button>
+                        <Link href="/thelatest">
+                            <Button flat auto rounded color="secondary">
+                                <Text
+                                css={{ color: "inherit" }}
+                                size={12}
+                                weight="bold"
+                                transform="uppercase"
+                                >
+                                The Latest
+                                </Text>
+                            </Button>
+                        </Link>
                         </Row>
                     </Col>
                     </Row>

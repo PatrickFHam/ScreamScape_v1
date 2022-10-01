@@ -1,5 +1,6 @@
 
 import { Navbar, Dropdown, Text, useTheme } from "@nextui-org/react";
+import { useRouter } from "next/router";
 
 import dynamic from "next/dynamic";
 const ThemeButton = dynamic(() => import("./ThemeButton"), { ssr: false });
@@ -13,6 +14,8 @@ import style from "../styles/Navigation.module.css";
 export default function Navigation() {
 
   const { isDark } = useTheme();
+
+  const router = useRouter();
 
   return (
     <NavLayout>
@@ -29,7 +32,16 @@ export default function Navigation() {
           hideIn="xs"
           variant="underline"
         >
-        <Navbar.Link isActive href="#">
+        <Navbar.Link
+          href="/"
+          isActive={router.asPath === "/" ? "true" : "false"}
+          >
+            Front Gate
+        </Navbar.Link>
+        <Navbar.Link
+          href="/thelatest"
+          isActive={router.asPath === "/thelatest" ? "true" : "false"}
+          >
             The Latest
         </Navbar.Link>
           <Dropdown isBordered>
@@ -106,8 +118,14 @@ export default function Navigation() {
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
-          <Navbar.Link href="#">About/Contact</Navbar.Link>
-          <Navbar.Link href="#">Search</Navbar.Link>
+          <Navbar.Link
+            href="/contact"
+            isActive={router.asPath === "/contact" ? "true" : "false"}>
+              About/Contact</Navbar.Link>
+          <Navbar.Link
+            href="/search"
+            isActive={router.asPath === "/search" ? "true" : "false"}>
+              Search</Navbar.Link>
         </Navbar.Content>
         <Navbar.Content>
           <ThemeButton />
