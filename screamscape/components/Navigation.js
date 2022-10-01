@@ -1,5 +1,5 @@
 
-import { Navbar, Dropdown, Text, useTheme } from "@nextui-org/react";
+import { Navbar, Dropdown, Text, useTheme, Link } from "@nextui-org/react";
 import { useRouter } from "next/router";
 
 import dynamic from "next/dynamic";
@@ -14,22 +14,50 @@ import style from "../styles/Navigation.module.css";
 export default function Navigation() {
 
   const { isDark } = useTheme();
-
   const router = useRouter();
+
+  const collapseItems = [
+    {
+      key: "frontgate",
+      name: "Front Gate",
+      link: "/"
+    },
+    {
+      key: "thelatest",
+      name: "The Latest",
+      link: "/thelatest"
+    },
+    {
+      key: "sortednews",
+      name: "Sorted News",
+      link: "/sortednews"
+    },
+    {
+      key: "contact",
+      name: "Contact",
+      link: "/contact"
+    },
+    {
+      key: "search",
+      name: "Search",
+      link: "/search"
+    }
+  ];
 
   return (
     <NavLayout>
       <Navbar>
+        <Navbar.Toggle showIn="sm" />
         <Navbar.Brand>
           <AcmeLogo />
-          <Text b color="inherit" hideIn="xs">
+          <Text b color="inherit" hideIn="sm">
             SCREAMSCAPE
           </Text>
         </Navbar.Brand>
         <Navbar.Content
           enableCursorHighlight
           activeColor={ isDark ? "secondary" : "primary" }
-          hideIn="xs"
+          hideIn="sm"
           variant="underline"
         >
         <Navbar.Link
@@ -127,6 +155,25 @@ export default function Navigation() {
             isActive={router.asPath === "/search" ? "true" : "false"}>
               Search</Navbar.Link>
         </Navbar.Content>
+        <Navbar.Collapse>
+          {collapseItems.map((item, index) => (
+            <Navbar.CollapseItem
+              key={index}
+              activeColor={ isDark ? "secondary" : "primary" }
+              isActive={ router.asPath === `${item.link}` ? "true" : "false"}
+            >
+              <Link
+                color="inherit"
+                css={{
+                  minWidth: "100%",
+                }}
+                href={item.link}
+              >
+                {item.name}
+              </Link>
+            </Navbar.CollapseItem>
+          ))}
+        </Navbar.Collapse>
         <Navbar.Content>
           <ThemeButton />
         </Navbar.Content>
