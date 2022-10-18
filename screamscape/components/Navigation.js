@@ -62,13 +62,13 @@ export default function Navigation() {
         >
         <Navbar.Link
           href="/"
-          isActive={router.asPath === "/" ? "true" : "false"}
+          isActive={router.asPath == "/" ? "true" : "false"}
           >
             Front Gate
         </Navbar.Link>
         <Navbar.Link
           href="/thelatest"
-          isActive={router.asPath === "/thelatest" ? "true" : "false"}
+          isActive={router.asPath == "/thelatest" ? "true" : "false"}
           >
             The Latest
         </Navbar.Link>
@@ -148,11 +148,11 @@ export default function Navigation() {
           </Dropdown>
           <Navbar.Link
             href="/contact"
-            isActive={router.asPath === "/contact" ? "true" : "false"}>
+            isActive={router.asPath == "/contact" ? "true" : "false"}>
               About/Contact</Navbar.Link>
           <Navbar.Link
             href="/search"
-            isActive={router.asPath === "/search" ? "true" : "false"}>
+            isActive={router.asPath == "/search" ? "true" : "false"}>
               Search</Navbar.Link>
         </Navbar.Content>
         <Navbar.Collapse>
@@ -160,7 +160,7 @@ export default function Navigation() {
             <Navbar.CollapseItem
               key={index}
               activeColor={ isDark ? "secondary" : "primary" }
-              isActive={ router.asPath === `${item.link}` ? "true" : "false"}
+              isActive={ router.asPath == `${item.link}` ? "true" : "false"}
             >
               <Link
                 color="inherit"
