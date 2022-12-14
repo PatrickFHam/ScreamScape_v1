@@ -1,6 +1,6 @@
 // import Image from 'next/image';
 import { Card, Col, Row, Button, Link, Text, Container, useTheme } from "@nextui-org/react";
-import styles from '../styles/Hero.module.css';
+// import styles from '../styles/Hero.module.css';
 
 
 export default function Hero() {

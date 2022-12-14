@@ -1,5 +1,4 @@
 import { Text, Container } from "@nextui-org/react";
-import { useRouter } from "next/router";
 
 export default function Contact () {
     

@@ -1,5 +1,5 @@
-import { Text, Container } from "@nextui-org/react";
-import { useRouter } from "next/router";
+import { Container } from "@nextui-org/react";
+// import { useRouter } from "next/router";
 
 export default function Search () {
     return (

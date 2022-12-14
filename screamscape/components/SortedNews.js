@@ -1,5 +1,4 @@
-import { Text, Container } from "@nextui-org/react";
-import { useRouter } from "next/router";
+import { Container } from "@nextui-org/react";
 
 export default function SortedNews () {
     return(
