@@ -1,7 +1,8 @@
-import { Card, Text, Col } from '@nextui-org/react';
+import { Card, Text, Col, Link } from '@nextui-org/react';
 
 function NewsCard ({props}) {
     return (
+        <Link href={`/newsstory/${props._id}`}>
         <Card>
             <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
             <Col>
@@ -21,7 +22,8 @@ function NewsCard ({props}) {
             alt="Card image background"
             />
         </Card>
+        </Link>
     )
-}
+};
 
 export default NewsCard;

@@ -3,7 +3,7 @@ import { connectToDatabase } from '../../util/mongodb';
 export default async function handler(req, res) {
     const {db} = await connectToDatabase();
 
-    console.log(req.query.term);
+    console.log("Term Searched Is:", req.query.term);
 
     const data = await db.collection('news').aggregate([
         {
@@ -19,5 +19,5 @@ export default async function handler(req, res) {
         }
       ]).toArray();
 
-    res.json(data)
+    res.json(JSON.parse(JSON.stringify(data)));
 };
