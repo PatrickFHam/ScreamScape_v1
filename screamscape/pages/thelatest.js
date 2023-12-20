@@ -19,7 +19,7 @@ export default function thelatest( { news } ) {
 
 export async function getServerSideProps(context) {
   const { db } = await connectToDatabase();
-  const data = await db.collection('news').find({}).toArray();
+  const data = await db.collection('news2').find({}).toArray();
   const news = JSON.parse(JSON.stringify(data));
 
   return {

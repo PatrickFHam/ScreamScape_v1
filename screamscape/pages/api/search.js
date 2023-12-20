@@ -5,7 +5,7 @@ export default async function handler(req, res) {
 
     console.log("Term Searched Is:", req.query.term);
 
-    const data = await db.collection('news').aggregate([
+    const data = await db.collection('news2').aggregate([
         {
           '$search': {
             'index': 'default',

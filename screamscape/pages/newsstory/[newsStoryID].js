@@ -17,7 +17,7 @@ export async function getServerSideProps(req, res) {
     const {db} = await connectToDatabase();
     const { newsStoryID } = req.query;
     const id = new require('mongodb').ObjectId(newsStoryID);
-    const data = await db.collection('news').findOne({_id: id});
+    const data = await db.collection('news2').findOne({_id: id});
     const newsStory = JSON.parse(JSON.stringify(data))
     
     return {
